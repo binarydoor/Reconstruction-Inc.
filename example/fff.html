@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Light Theme</title>
+<title>CCLE</title>
 <link href="css/singlePageTemplate.css" rel="stylesheet" type="text/css">
 <!--The following script tag downloads a font from the Adobe Edge Web Fonts server for use within the web page. We recommend that you do not modify it.-->
 <script>var __adobewebfontsappname__="dreamweaver"</script>
@@ -26,50 +26,95 @@
     <nav>
       <ul>
         <li><a href="#hero">HOME</a></li>
-        <li><a href="#about">ABOUT</a></li>
-        <li> <a href="#contact">CONTACT</a></li>
+        <li><a href="#about">CLASS</a></li>
+        <li> <a href="#contact">CALENDER</a></li>
+        <li><a href="#calendar"> SETTING</a></li>
       </ul>
     </nav>
   </header>
+  <!--Calendar Section-->
+  <section class="calendar" id="calendar">
+
+  </section>
   <!-- Hero Section -->
   <section class="hero" id="hero">
-    <h2 class="hero_header">HERO <span class="light">LIGHT</span></h2>
-    <p class="tagline">Light is a simple one page website</p>
+    <h2 class="hero_header">Welcome <span class="light">Joe Bruin!</span></h2>
+    <p class="tagline">FALL 2018 Week 6</p>
   </section>
-  <!-- About Section -->
+  <!-- Class Section -->
   <section class="about" id="about">
-    <h2 class="hidden">About</h2>
-    <p class="text_column">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
-    <p class="text_column">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
-    <p class="text_column">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+    <div class="row">
+    <h2 class="hidden">CLASS</h2>
+    <div class="text_column">
+      <h2>ENGR 185EW</h2>
+      <p>Don Brwone: don@ucla.edu</p>
+    </div>
+    <div class="text_column">
+      <h2>CS 188</h2>
+      <p>Uichin Lee: uclee@ucla.edu</p>
+    </div>
+    <div class="text_column">
+      <h2>ECE 102</h2>
+      <p>J.C. Kao: kao@seas.ucla.edu</p> 
+    </div>
+  </div>
   </section>
+  <style>
+    .text_column{
+      float: left;
+      width: 200px;
+      padding: 30px;
+      height: 100px;
+    }
+    .row:after {
+      content:"";
+      display: table;
+      clear: both;
+    }
+  </style>
   <!-- Stats Gallery Section -->
   <div class="gallery">
     <div class="thumbnail">
-      <h1 class="stats">1500</h1>
-      <h4>TITLE</h4>
-      <p>One line description</p>
+      <h1 class="stats">Grades</h1>
+      <!--<h4>ENGR 185EW</h4>
+      <p>Total: 92%</p>-->
     </div>
     <div class="thumbnail">
-      <h1 class="stats">2300</h1>
-      <h4>TITLE</h4>
-      <p>One line description</p>
+    <!--<h1 class="stats">2300</h1>-->
+      <h4>ENGR 185EW</h4>
+      <p>Total: 92%</p>
     </div>
     <div class="thumbnail">
-      <h1 class="stats">7500</h1>
-      <h4>TITLE</h4>
-      <p>One line description</p>
+      <!--<h1 class="stats">7500</h1>-->
+      <h4>CS 188</h4>
+      <p>Total: 97%</p>
     </div>
     <div class="thumbnail">
-      <h1 class="stats">9870</h1>
-      <h4>TITLE</h4>
-      <p>One line description</p>
+      <!--<h1 class="stats">9870</h1>-->
+      <h4>ECE 102</h4>
+      <p>Total: 83%</p>
     </div>
   </div>
   <!-- Parallax Section -->
   <section class="banner">
-    <h2 class="parallax">PARALLAX HERO</h2>
-    <p class="parallax_description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+    <h2 class="parallax">Upcoming Events</h2>
+    <table class="parallax_description">
+     <tr>
+       <th>ENGR 185EW</th>
+       <th>CS 188</th>
+       <th>ECE 102</th>
+     </tr>
+     <tr>
+       <td>Midterm: 11/7/2018</td>
+       <td>Design Project 4: 11/9/2018</td>
+       <td>Homework 4: 11/8/2018</td>
+     </tr>
+     <tr>
+       <td>2nd Trimester Review: 11/13/2018</td>
+       <td>Program Assignment 3: 11/16/2018</td>
+       <td>Homework 5: 11/15/2018</td>
+     </tr>
+    </table>
   </section>
   <!-- More Info Section -->
   <footer>
@@ -91,7 +136,7 @@
     <div class="button">subscribe</div>
   </section>
   <!-- Copyrights Section -->
-  <div class="copyright">&copy;2015 - <strong>Light Theme</strong></div>
+  <div class="copyright">&copy;2015 - <strong>Reconstruction Inc.</strong></div>
 </div>
 <!-- Main Container Ends -->
 </body>
