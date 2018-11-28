@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="register.css" rel="stylesheet" type="text/css"/>
+  <title>Sign Up</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Sign Up</h1>
+
+    <p>
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" id="email" required>
+    </p>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" id="psw" required>
+
+    <p>
+    <label for="rp_psw"><b>Repeat Password</b></label>
+    <input type="password" placeholder="Repeat Password" id="rp_psw" required>
+    </p>
+
+    <p>
+    <label>
+    <input type="checkbox" name="term"> I agree to the <a href="#" style="color: dodgerblue">Terms & Privacy</a>
+    </label>
+    </p>
+
+    <a href="loginexample.html"><button type="button" id="cancelbtn">Cancel</button></a>
+    <a href="SignUpComp.html"><button type="submit" id="signupbtn">Sign Up</button></a>
+
+  </div>
+
+<script src="jquery/js/jquery-1.9.0.min.js"></script>
+<script src="jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.5.9/firebase.js"></script>
+<script type="./register.js"></script>
+</body>
+</html>
