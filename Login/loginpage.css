@@ -43,6 +43,9 @@ button:hover {
   margin: 10px 0 0 80px;
 }
 
+#wrong_psw{
+  color: red;
+}
 
 .reg{
   text-align: center;

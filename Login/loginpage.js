@@ -1,5 +1,5 @@
-$( document ).ready(function() {
 
+$( document ).ready(function() {
   // Initialize Firebase
   var config = {
     apiKey: "AIzaSyDiszQtqQ82up58DVKGwwSlRYaiFTQzEsk",
@@ -11,23 +11,38 @@ $( document ).ready(function() {
   };
   firebase.initializeApp(config);
 
-  var rootRef = firebase.database().ref('user');
+  var rootRef = firebase.database().ref('User');
   var newKey;
 
-  $('#log').click(function(){
-  	var email = ('#uname').val();
-  	var paswd = ('#psw').val();
+  $('#log').click(function() {
+  	var correctEmail = false;
+  	var correctPW = false;
+  	
+  	var email = $('#uname').val();
+  	var paswd = $('#psw').val();
 
-  	rootRef.orderByChild("Email").equalTo(email).on("child_added", function(snapshot){
-  		var solution = snapshot.val();
-  		if (solution.Password != paswd)
-  		{
-  			document.getElementById('#wrong_psw').innerHTML = "WRONG PASSWORD!";
+  	rootRef.orderByChild("Emails").equalTo(email).on('value', function(snapshot){
+  		if (snapshot.exists() == false){
+  			document.getElementById("wrong_psw").innerHTML = "<p>WRONG EMAIL!</p>";
   		}
-  	}, function(error){
-  		console.log("Error: " + error.code);
-  		document.getElementById('#wrong_psw').innerHTML = "WRONG EMAIL!";
+  		else
+  			correctEmail = true;
   	});
-  });
 
+  	rootRef.orderByChild("Emails").equalTo(email).on("child_added", function(snapshot){
+  		var solution = snapshot.val();
+  		if (solution.Passwords != paswd){
+  			document.getElementById("wrong_psw").innerHTML = "<p>WRONG PASSWORD!</p>";
+  			correctPW = true;
+  		}
+  		else
+  			correctPW = true;
+  	}, function(error){
+  		console.log("ERROR: " + error.code);
+  	});
+
+  	if (correctEmail == true && correctPW == true)
+  		location.href = "SignUpComp.html";
+
+ 	});
 });

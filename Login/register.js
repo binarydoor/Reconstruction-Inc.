@@ -14,16 +14,49 @@ $( document ).ready(function() {
   var newKey;
 
   $('#signupbtn').click(function(){
-
+    document.getElementById('noName').innerHTML = "";
+    document.getElementById('noEmail').innerHTML = "";
+    document.getElementById('noPW').innerHTML = "";
+    var existing_email = false;
+    var name = $('#name').val();
     var email = $('#email').val();
     var password = $('#psw').val();
+    var rp_pw = $('#rp_psw').val();
 
+    rootRef.orderByChild("Emails").equalTo(email).on('value', function(snapshot){
+      if (snapshot.exists())
+        document.getElementById("noEmail").innerHTML = "<p>This Email Already Exists</p>";
+      else
+        existing_email = true;
+    });
+
+    if (name == '')
+    {
+      document.getElementById('noName').innerHTML = "<p>Please Enter Your Name</p>";
+    }
+    if (email == '')
+    {
+      document.getElementById('noEmail').innerHTML = "<p>Please Enter Your Email</p>";
+    }
+    if (password == '')
+    {
+      document.getElementById('noPW').innerHTML = "<p>Please Enter Your Password</p>";
+    }
+    if (password != rp_pw)
+    {
+      document.getElementById('mismatch').innerHTML = "<p>Please Enter Exactly Same Password</p>";
+    }
+
+    if (name != '' && email != '' && password !='' && password == rp_pw && existing_email == true){
     var newItem = rootRef.push();
 
     newItem.update({
+      Names: name,
       Emails: email,
       Passwords: password
     });
+    location.href = "SignUpComp.html";
+  }   
 
   });
   
