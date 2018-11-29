@@ -17,7 +17,7 @@ $( document ).ready(function() {
   $('#log').click(function() {
   	var correctEmail = false;
   	var correctPW = false;
-  	
+
   	var email = $('#uname').val();
   	var paswd = $('#psw').val();
 
@@ -33,7 +33,6 @@ $( document ).ready(function() {
   		var solution = snapshot.val();
   		if (solution.Passwords != paswd){
   			document.getElementById("wrong_psw").innerHTML = "<p>WRONG PASSWORD!</p>";
-  			correctPW = true;
   		}
   		else
   			correctPW = true;

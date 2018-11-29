@@ -17,6 +17,8 @@ $( document ).ready(function() {
     document.getElementById('noName').innerHTML = "";
     document.getElementById('noEmail').innerHTML = "";
     document.getElementById('noPW').innerHTML = "";
+    document.getElementById('noCheck').innerHTML = "";
+    var checkBox = document.getElementById('checking');
     var existing_email = false;
     var name = $('#name').val();
     var email = $('#email').val();
@@ -46,8 +48,13 @@ $( document ).ready(function() {
     {
       document.getElementById('mismatch').innerHTML = "<p>Please Enter Exactly Same Password</p>";
     }
+    if (checkBox.checked == false)
+    {
+      document.getElementById('noCheck').innerHTML = "<p>Please Check the Box</p>"
+    }
 
-    if (name != '' && email != '' && password !='' && password == rp_pw && existing_email == true){
+    if (name != '' && email != '' && password !='' && password == rp_pw 
+      && existing_email == true && checkBox.checked == true){
     var newItem = rootRef.push();
 
     newItem.update({
@@ -55,9 +62,12 @@ $( document ).ready(function() {
       Emails: email,
       Passwords: password
     });
-    location.href = "SignUpComp.html";
-  }   
 
+    
+  }
+  if (name != '' && email != '' && password !='' && password == rp_pw 
+      && existing_email == true && checkBox.checked == true)
+    location.href = "SignUpComp.html";
   });
   
 });

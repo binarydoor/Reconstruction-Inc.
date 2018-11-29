@@ -50,6 +50,6 @@ h1 {
   padding: 10px 18px;
 }
 
-#noName, #noEmail, #noPW, #mismatch {
+#noName, #noEmail, #noPW, #mismatch, #noCheck {
   color: red;
 }
