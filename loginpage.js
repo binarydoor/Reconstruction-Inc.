@@ -41,7 +41,7 @@ $( document ).ready(function() {
   	});
 
   	if (correctEmail == true && correctPW == true)
-  		location.href = "../Main/main.html";
+  		location.href = "./Main/main.html";
 
  	});
 });
