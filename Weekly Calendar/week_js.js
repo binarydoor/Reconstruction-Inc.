@@ -61,7 +61,6 @@ $( document ).ready(function() {
 
 				
 
-				document.getElementById(classID[0]).children[9].innerHTML
 		
 });
 
