@@ -11,6 +11,13 @@ $( document ).ready(function() {
   };
   firebase.initializeApp(config);
 
+  // Hovering popup (help)
+  $("label").hover(function(){
+    loginPopup(this.children[2].id); },
+    function(){
+    loginClose(this.children[2].id);
+  });
+
   var rootRef = firebase.database().ref('User');
   var newKey;
 
@@ -44,3 +51,14 @@ $( document ).ready(function() {
 
  	});
 });
+
+
+function loginPopup(specifier) {
+  var popup = document.getElementById(specifier);
+  popup.classList.toggle("show");
+}
+
+function loginClose(specifier) {
+  var popup = document.getElementById(specifier);
+  popup.classList.toggle("unshow");
+}
