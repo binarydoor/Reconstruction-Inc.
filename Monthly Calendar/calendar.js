@@ -30,8 +30,8 @@ $( document ).ready(function() {
 			CS188_data.on('child_added', function(snapshot) {
 					
 			
-					document.getElementById(snapshot.key).innerHTML = "hw";
-					//	dailyLine[num] += 1; 
+					document.getElementById(snapshot.key).innerHTML = "ha";
+					///	dailyLine[num] += 1; 
 				//	document.getElementById(classID[num]).children[dailyLine[num]].innerHTML = snapshot.val().fontcolor("black");
 					//	dailyLine[num] += 1;
 					
