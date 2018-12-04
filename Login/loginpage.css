@@ -106,6 +106,7 @@ h2 {
 
 /* Toggle this class - hide and show the popup */
 .popup .show {
+    opacity: 1;
     visibility: visible;
     -webkit-animation: fadeIn 1s;
     animation: fadeIn 1s;
@@ -113,8 +114,9 @@ h2 {
 
 /* Toggle this class - hide and show the popup */
 .popup .unshow {
-
-    visibility: hidden;
+    -webkit-animation: fadeOut 1s;
+    animation: fadeOut 1s;
+    opacity: 0;
 }
 
 
