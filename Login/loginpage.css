@@ -10,8 +10,12 @@ input[type=text], input[type=password] {
     box-sizing: border-box;
 }
 
+input[type=text]{
+  margin-left: 33px;
+}
+
 button {
-    background-color: #1B94DE;
+    background-color: #6DC7D0;
     color: white;
     padding: 14px 20px;
     margin: auto;
@@ -55,7 +59,7 @@ button:hover {
 }
 h2 {
   text-align: center;
-  color: #1B94DE;
+  color: #6DC7D0;
 }
 
 .cancelbtn {
