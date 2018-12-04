@@ -35,13 +35,12 @@ $( document ).ready(function() {
   			document.getElementById("wrong_psw").innerHTML = "<p>WRONG PASSWORD!</p>";
   		}
   		else
-  			correctPW = true;
-  	}, function(error){
-  		console.log("ERROR: " + error.code);
+        location.href = "../Main/main.html";
+  			//correctPW = true;
   	});
 
-  	if (correctEmail == true && correctPW == true)
-  		location.href = "../Main/main.html";
+  //	if (correctEmail == true && correctPW == true)
+  //		location.href = "../Main/main.html";
 
  	});
 });
