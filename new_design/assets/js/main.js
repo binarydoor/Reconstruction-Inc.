@@ -25,6 +25,7 @@ var classRoot = firebase.database().ref('Class');
 var classID = ["firstClass", "secondClass", "thirdClass"];
 
 var eventdb = [];
+var eventdbday = [];
 var asmt = [];
 var duedate = [];
 var CS188_data = firebase.database().ref('Class/CS188/Assignment');
@@ -81,7 +82,8 @@ $(document).ready(function() {
             const item = childSnap.val();
             asmt.push(item);
             duedate.push(childSnap.key);
-            eventdb.push({title: item, start: getData(childSnap.key)});
+            eventdbday.push({title: "CS188 - " + item, start: getData(childSnap.key), color: '#c58f26'});
+            eventdb.push({title: item, start: getData(childSnap.key), color: '#c58f26'});
         });
     });
     ENGR185_data.once('value', function(snap){
@@ -89,7 +91,8 @@ $(document).ready(function() {
             const item = childSnap.val();
             asmt.push(item);
             duedate.push(childSnap.key);
-            eventdb.push({title: item, start: getData(childSnap.key)});
+            eventdbday.push({title: "ENGR185 - " + item, start: getData(childSnap.key), color: "#2ac526"});
+            eventdb.push({title: item, start: getData(childSnap.key), color: "#2ac526"});
         });
     });
     ECE102_data.once('value', function(snap){
@@ -97,14 +100,15 @@ $(document).ready(function() {
             const item = childSnap.val();
             asmt.push(item);
             duedate.push(childSnap.key);
-            eventdb.push({title: item, start: getData(childSnap.key)});
+            eventdbday.push({title: "ECE102 - " + item, start: getData(childSnap.key), color: "#da3131"});
+            eventdb.push({title: item, start: getData(childSnap.key), color: "#da3131"});
         });
     });
     setTimeout(function() {
   	$('#calendar').fullCalendar('addEventSource', eventdb);
 	}, 2000);
     setTimeout(function() {
-  	$('#dailyCal').fullCalendar('addEventSource', eventdb);
+  	$('#dailyCal').fullCalendar('addEventSource', eventdbday);
 	}, 2000);
     console.log(eventdb);
     console.log(asmt);
@@ -123,9 +127,12 @@ $(document).ready(function() {
             listDay: { buttonText: 'list day' },
             listWeek: { buttonText: 'list week' }
           },*/
-
+        header: false,
         defaultView: 'listDay',
+        listDayAltFormat: 'MMMM D',
+        
         defaultDate: '2018-12-7',
+        displayEventTime: false,
         //navLinks: false, // can click day/week names to navigate views
         //editable: false,
         //eventLimit: true, // allow "more" link when too many events
@@ -4044,7 +4051,8 @@ $(document).ready(function() {
                         type: r || "day"
                     }, "string" == typeof e && (n = e, e = null), e = e ? " " + a.attrsToStr(e) : "", n = n || "", !s && this.opt("navLinks") ? "<a" + e + ' data-goto="' + a.htmlEscape(JSON.stringify(u)) + '">' + n + "</a>" : "<span" + e + ">" + n + "</span>"
                 }, e.prototype.getAllDayHtml = function() {
-                    return this.opt("allDayHtml") || a.htmlEscape(this.opt("allDayText"))
+                    //return this.opt("allDayHtml") || a.htmlEscape(this.opt("allDayText"))
+                    return this.opt("allDayText") || a.htmlEscape(this.opt("allDayText"))
                 }, e.prototype.getDayClasses = function(t, e) {
                     var n, i = this._getView(),
                         r = [];
