@@ -62,6 +62,137 @@ function getData(stringdata){                                   //120318
 
 
 $(document).ready(function() {
+    
+
+
+
+var CS188_grade_data = firebase.database().ref('Class/CS188/Grade');
+var ENGR185_grade_data = firebase.database().ref('Class/ENGR185/Grade');
+var ECE102_grade_data = firebase.database().ref('Class/ECE102/Grade');
+
+var number_Of_output_line = 1;  // it would be start from 1?? i guess not sure
+
+
+function ChangeDueDateFormat(stringdata){   
+                                            //120318
+          var data = Number(stringdata);
+          data = (data - data%1000000)/1000000;   
+          var month = (data - data%10000)/10000;                  // it would be 12
+          var date  = ((data%10000) - (data%10000)%100)/100;  // it would be 03   
+                                                      // but the problem is it is just printing 3
+  
+          var year  = (data%100) + 2000;                      // it would be 18 + 2000 = 2018
+
+          var strdate = date.toString();
+          var strmonth = month.toString();    // it needs for making 03 instead of 3
+
+          if(strdate.length == 1){
+                return (year+ '-' + month + '-0' + date);
+          }else{
+                return (year+ '-' + month + '-' + date);
+          }
+
+}                                                                                           //        date |score
+                                                                                            // key is 120318405030
+                                                                                            //        100000000000
+                                                                                            //              100000
+function GetMyGrade(Originaldata){
+        var data = (Originaldata%1000000);
+        var temp = data%10000;
+        return ((data - temp)/10000);
+}
+
+function GetTotalGrade(Originaldata){       //ex 120318405030
+        var data = (Originaldata%1000000);  //405030
+        var temp = data%100;        //      30
+        var temp1 = data%10000          //5030
+        return ((temp1 - temp)/100);
+}
+
+function GetMeanGrade(Originaldata){
+        var data = (Originaldata%1000000);
+        var temp = data%100;    // mean is 38
+        return temp;
+}
+
+
+
+
+            CS188_grade_data.on('child_added', function(snapshot) {
+
+                //alert(ChangeDueDateFormat(snapshot.key));
+                
+                    var table = document.getElementById("MyTable");
+                    var row = table.insertRow(number_Of_output_line);
+                    var cell1 = row.insertCell(0);
+                    var cell2 = row.insertCell(1);
+                    var cell3 = row.insertCell(2);
+                    var cell4 = row.insertCell(3);
+                    var cell5 = row.insertCell(4);
+
+                    cell1.innerHTML = "[  CS188  ] ".fontcolor("red") + snapshot.val();     
+                    cell2.innerHTML = ChangeDueDateFormat(snapshot.key);
+                    cell3.innerHTML = GetMyGrade(snapshot.key);
+                    cell4.innerHTML = GetTotalGrade(snapshot.key);
+                    cell5.innerHTML = GetMeanGrade(snapshot.key);
+                
+                //document.getElementById("GradeTableCol2").insertRow(number_Of_output_line).innerHTML = snapshot.key;
+
+
+                    number_Of_output_line ++; 
+                    
+            }); 
+
+            ECE102_grade_data.on('child_added', function(snapshot) {
+
+                //alert(ChangeDueDateFormat(snapshot.key));
+                
+                    var table = document.getElementById("MyTable");
+                    var row = table.insertRow(number_Of_output_line);
+                    var cell1 = row.insertCell(0);
+                    var cell2 = row.insertCell(1);
+                    var cell3 = row.insertCell(2);
+                    var cell4 = row.insertCell(3);
+                    var cell5 = row.insertCell(4);
+
+                    cell1.innerHTML = "[ ECE102 ] ".fontcolor("green") + snapshot.val();        
+                    cell2.innerHTML = ChangeDueDateFormat(snapshot.key);
+                    cell3.innerHTML = GetMyGrade(snapshot.key);
+                    cell4.innerHTML = GetTotalGrade(snapshot.key);
+                    cell5.innerHTML = GetMeanGrade(snapshot.key);
+                
+                //document.getElementById("GradeTableCol2").insertRow(number_Of_output_line).innerHTML = snapshot.key;
+
+
+                    number_Of_output_line ++; 
+                    
+            });
+
+            ENGR185_grade_data.on('child_added', function(snapshot) {
+
+                //alert(ChangeDueDateFormat(snapshot.key));
+                
+                    var table = document.getElementById("MyTable");
+                    var row = table.insertRow(number_Of_output_line);
+                    var cell1 = row.insertCell(0);
+                    var cell2 = row.insertCell(1);
+                    var cell3 = row.insertCell(2);
+                    var cell4 = row.insertCell(3);
+                    var cell5 = row.insertCell(4);
+
+                    cell1.innerHTML = "[ ENGR185 ]".fontcolor("blue") + snapshot.val();     
+                    cell2.innerHTML = ChangeDueDateFormat(snapshot.key);
+                    cell3.innerHTML = GetMyGrade(snapshot.key);
+                    cell4.innerHTML = GetTotalGrade(snapshot.key);
+                    cell5.innerHTML = GetMeanGrade(snapshot.key);
+                
+                //document.getElementById("GradeTableCol2").insertRow(number_Of_output_line).innerHTML = snapshot.key;
+
+
+                    number_Of_output_line ++; 
+                    
+            });
+
 	var index = 0;
 
 	classRoot.on('child_added', function(snapshot) {

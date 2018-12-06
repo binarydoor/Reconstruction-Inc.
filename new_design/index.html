@@ -17,6 +17,8 @@
         <!-- Responsive Style -->
         <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
 
+        <link rel="stylesheet" href="Gradepage.css">
+
         <!--Icon Fonts-->
         <link rel="stylesheet" media="screen" href="assets/fonts/font-awesome/font-awesome.min.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
@@ -78,6 +80,10 @@
             .fc-highlight{
               background-color: #1B94DE; 
             }
+            #signOut{
+                background: #D6110E;
+                float: right;
+            }
         </style>
 
       </head>
@@ -102,11 +108,14 @@
                             <ul class="nav navbar-nav col-md-9 pull-right">
                             <li class="active"><a href="#hero-area"><i class="fa fa-home"></i> Home</a></li>
                             <li><a href="#services"><i class="fa fa-calendar"></i> Calendar</a></li>
+                            <li><a href="#grade"><i class="fas fa-tasks"></i> Grade</a></li>
                             <li><a href="#portfolio"><i class="fa fa-cogs"></i> Settings</a></li>
-                            <li><a href="#clients"><i class="fa fa-puzzle-piece"></i> Etc2</a></li>
-                            <li><a href="#about"><i class="fa fa-info"></i> Etc3</a></li>
-                            <li><a href="#contact"><i class="fa fa-envelope"></i> Etc4</a></li>
+                            <!--<li><a href="#clients"><i class="fa fa-puzzle-piece"></i> Etc2</a></li> -->
+                            <!--<li><a href="#about"><i class="fa fa-info"></i> Etc3</a></li>
+                            <li><a href="#contact"><i class="fa fa-envelope"></i> Etc4</a></li> -->
+                            <li id="signOut"><a href="../Login/loginpage.html"><i class="fas fa-sign-out-alt"></i> LOGOUT</a></li>
                             </ul>
+                            
         </div>
       </div>
     </nav>
@@ -121,7 +130,7 @@
     <div class="row">
 <div class="col-md-12">
         <h1 class="title">Fall Quarter 2018</h1>
-        <h2 class="subtitle">Classes... (descriptive subtitle)</h2>
+        <h2 class="subtitle">Week 10</h2>
 
         <!--<img class="col-md-6 col-sm-6 col-xs-12 animated fadeInLeft" src="assets/img/hero/macbook.png" alt="">
 
@@ -227,88 +236,40 @@
 
 <!-- Portfolio Section -->
 
-    <section id="portfolio">
+    <<section id="grade">
     <div class="container">
     <div class="row">
-    <h1 class="title">Portfolio</h1>
-    <h2 class="subtitle">Lorem Ipsum is simply dummy text</h2>
+    <h1 class="title">Course Grade</h1>
+    <h2 class="subtitle"></h2>
 
 
 
-    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-    <div class="portfolio-item wow fadeInLeft" data-wow-delay=".5s">
-    <a href="#"><img src="assets/img/portfolio/img1.jpg" alt=""></a>
-    <div class="overlay">
-    <div class="icons">
-    <a data-lightbox="image1" href="assets/img/portfolio/img1.jpg" class="preview"><i class="fa fa-search-plus fa-4x"></i></a>
-    </div>
-    </div>
-    </div>
-    </div>
+     <table id = "MyTable">
+                <tr id = "row1">
+                    <th id = "GradeTableCol1">Name</th>
+                    <th id = "GradeTableCol2">Due</th>
+                    <th id = "GradeTableCol3">Score</th>
+                    <th id = "GradeTableCol4">Out of</th>
+                    <th id = "GradeTableCol5">Average</th>
+                </tr> 
+                <tr>
+                    <td id = "GradeTableCol6"></td>
+                    <td id = "GradeTableCol7"></td>
+                    <td id = "GradeTableCol8"></td>
+                    <td id = "GradeTableCol9"></td>
+                    <td id = "GradeTableCol0"></td>
+                </tr>      
+    
 
-
-    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-    <div class="portfolio-item wow fadeInLeft" data-wow-delay=".7s">
-    <a href="#"><img src="assets/img/portfolio/img2.jpg" alt=""></a>
-    <div class="overlay">
-    <div class="icons">
-    <a data-lightbox="image1" href="assets/img/portfolio/img2.jpg" class="preview"><i class="fa fa-search-plus fa-4x"></i></a>
-    </div>
-    </div>
-    </div>
-    </div>
-
-    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-    <div class="portfolio-item wow fadeInLeft" data-wow-delay=".9s">
-    <a href="#"><img src="assets/img/portfolio/img3.jpg" alt=""></a>
-    <div class="overlay">
-    <div class="icons">
-    <a data-lightbox="image1" href="assets/img/portfolio/img3.jpg" class="preview"><i class="fa fa-search-plus fa-4x"></i></a>
-    </div>
-    </div>
-    </div>
-    </div>
-
-    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 wow fadeInRight" data-wow-delay="1.1s">
-    <div class="portfolio-item">
-    <a href="#"><img src="assets/img/portfolio/img4.jpg" alt=""></a>
-    <div class="overlay">
-    <div class="icons">
-    <a data-lightbox="image1" href="assets/img/portfolio/img4.jpg" class="preview"><i class="fa fa-search-plus fa-4x"></i></a>
-    </div>
-    </div>
-    </div>
-    </div>
-
-    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 wow fadeInRight" data-wow-delay="1.3s">
-    <div class="portfolio-item">
-    <a href="#"><img src="assets/img/portfolio/img5.jpg" alt=""></a>
-    <div class="overlay">
-    <div class="icons">
-    <a data-lightbox="image1" href="assets/img/portfolio/img5.jpg" class="preview"><i class="fa fa-search-plus fa-4x"></i></a>
-    </div>
-    </div>
-    </div>
-    </div>
-
-    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 wow fadeInRight" data-wow-delay="1.5s">
-    <div class="portfolio-item">
-    <a href="#"><img src="assets/img/portfolio/img6.jpg" alt=""></a>
-    <div class="overlay">
-    <div class="icons">
-    <a data-lightbox="image1" href="assets/img/portfolio/img6.jpg" class="preview"><i class="fa fa-search-plus fa-4x"></i></a>
-    </div>
-    </div>
-    </div>
-    </div>
+     </table>
       
     </div>
     </div>
     </section>
-<!-- Portfolio Section End -->
+<!--    Portfolio Section End -->
 
 
-<!-- Client Section -->
+<!-- Client Section 
     <section id="clients">
     <div class="container">
     <div class="row">
@@ -329,11 +290,11 @@
     </div>
     </div>
     </section>
-<!-- Client Section End -->
+    Client Section End -->
 
 
 
-<!-- About Section -->
+<!-- About Section 
 
     <section id="about">
     <div class="container">
@@ -352,11 +313,11 @@
     </div>
     </div>
     </section>
-<!-- About Section End -->
+ About Section End -->
 
 
 
-<!-- Conatct Section -->
+<!-- Conatct Section 
     <section id="contact">
     <div class="container text-center">
     <div class="row">
@@ -416,7 +377,7 @@
     </div>
     </section>
 
-<!-- Conatct Section End-->
+ Conatct Section End-->
 
 
     <div id="copyright">
@@ -436,7 +397,7 @@
                     <!-- Smooth Scroll -->
         <script src="assets/js/smooth-scroll.js"></script>
         <script src="assets/js/lightbox.min.js"></script>
-
+        <script src="Gradepage.js"></script>
         <!-- All JS plugin Triggers -->
         
 

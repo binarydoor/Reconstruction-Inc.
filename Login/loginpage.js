@@ -42,7 +42,7 @@ $( document ).ready(function() {
   			document.getElementById("wrong_psw").innerHTML = "<p>WRONG PASSWORD!</p>";
   		}
   		else
-        location.href = "../Main/main.html";
+        location.href = "../new_design/index.html";
   			//correctPW = true;
   	});
 
